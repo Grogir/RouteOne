@@ -1,0 +1,129 @@
+// VIRIDIAN FOREST
+0x39E67 -v 2
+lm HORNATTACK
+0x39E6B -v 2
+0x39E70 -v 2
+
+// PEWTER GYM
+0x39F17 -v 2
+lm DOUBLEKICK
+0x3A454 -v 2
+// 0x3A454 -v 2 -x 0/-2/0/0
+
+// ROUTE 3
+0x39E73 -v 2
+0x39E2F -v 2
+0x39E78 -v 2
+evolve NIDORINO
+0x39E7E -v 2
+
+// MT. MOON
+evolve NIDOKING
+0x39FCF -v 2
+0x3A3D9 -v 2
+
+// NUGGET BRIDGE
+0x3A292 -v 2
+0x39E8B -v 2
+0x39EC4 -v 2
+0x39E3B -v 2
+rarecandy
+rarecandy
+um TACKLE
+lm THRASH
+0x39EC0 -v 2
+0x39F1F -v 2
+0x3A32F -v 2
+
+// ROUTE 25
+0x3A012 -v 2
+0x39EC8 -v 2
+0x39F1B -v 2
+0x39ECC -v 2
+
+// CERULEAN GYM
+0x39F3F -v 2
+0x3A45A -v 2
+
+// ROUTE 6
+0x3A32B -v 2
+0x39F46 -v 2
+0x39F25 -v 2
+
+// VERMILION
+um LEER
+lm BUBBLEBEAM
+0x3A499 -v 2
+// 0x3A495 -v 2 //g
+// rarecandy //g
+0x3A460 -v 2
+
+// ROUTE 9
+um DOUBLEKICK
+lm THUNDERBOLT
+0x39F4E -v 2
+0x39EA0 -v 2
+
+// ROCK TUNNEL
+0x39FC7 -v 2
+0x39FBF -v 2
+0x39F64 -v 2
+0x3A026 -v 2
+0x39F8A -v 2
+0x3A172 -v 2
+um BUBBLEBEAM
+lm ROCKSLIDE
+um HORNATTACK
+lm HORNDRILL
+
+// POKEMON TOWER
+0x3A4AF -v 2
+0x3A551 -v 2
+0x3A55B -v 2
+0x3A571 -v 2
+0x3A3E3 -v 2
+
+// SILPH CO.
+0x3A3CA -v 2
+carbos
+um ROCKSLIDE
+lm EARTHQUAKE
+0x3A398 -v 2
+rarecandy
+rarecandy
+0x3A4D3 -v 2
+0x3A3E8 -v 2
+0x3A305 -v 2
+
+// SAFFRON GYM
+0x3A47E -v 2
+
+// FUCHSIA GYM
+0x3A1DF -v 2
+0x3A1E5 -v 2
+0x3A46C -x 0/0/1/0 -bbs 1/1/0/0 -v 2
+um THRASH
+lm ICEBEAM
+rarecandy
+
+// CINNABAR GYM
+0x3A476 -x 1/0/0/0 -bbs 0/1/1/0 -v 2
+
+// CELADON GYM
+0x3A180 -v 2
+0x3A464 -v 2
+
+// VIRIDIAN GYM
+0x3A421 -v 2
+0x3A27F -v 2
+0x3A30F -x 0/0/1/0 -bbs 1/1/0/1 -v 2
+carbos
+
+// ENDGAME
+0x3A4F9 -x 0/0/0/1 -bbs 1/1/1/0 -v 2
+0x3A53F -v 2
+0x3A448 -v 2
+0x3A59A -x 0/0/1/0 -bbs 1/1/0/1 -v 2
+0x3A5A6 -x 0/0/0/1 -bbs 1/1/1/0 -v 2
+// 0x3A5A6 -x 0/0/0/2 -bbs 2/2/2/0 -v 2
+0x3A523 -x 0/0/0/2 -bbs 0/1/1/0 -v 2
