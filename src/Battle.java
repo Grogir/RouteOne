@@ -133,7 +133,7 @@ public class Battle extends GameAction {
                 printShortBattle(p, (Pokemon) opponent);
 
             opponent.battle(p, options, 0);
-            Main.appendln(String.format("LVL: %d EXP NEEDED: %d/%d", p.getLevel(), p.expToNextLevel(), p.expForLevel()));
+            Main.appendln(String.format("\t\tLVL: %d EXP NEEDED: %d/%d\n", p.getLevel(), p.expToNextLevel(), p.expForLevel()));
 
         } else { // is a Trainer
             Trainer t = (Trainer) opponent;
@@ -162,7 +162,7 @@ public class Battle extends GameAction {
                                 break;
                             }
                         }
-                        Main.append("(Speed DV required");
+                        Main.append("\t\t(Speed DV required");
                         if (tieDV != 16 && outspeedDV != 16 && (tieDV != outspeedDV)) {
                             Main.append(" to outspeed: " + outspeedDV + ", to speedtie: " + tieDV);
                         } else if (outspeedDV != 16) {
@@ -186,13 +186,13 @@ public class Battle extends GameAction {
                     }
                 }
                 if (getVerbose() == BattleOptions.ALL || getVerbose() == BattleOptions.EVERYTHING) {
-                    Main.appendln(String.format("LVL: %d EXP NEEDED: %d/%d", p.getLevel(), p.expToNextLevel(),
+                    Main.appendln(String.format("\t\tLVL: %d EXP NEEDED: %d/%d\n", p.getLevel(), p.expToNextLevel(),
                             p.expForLevel()));
                 }
             }
 
             if (getVerbose() == BattleOptions.SOME) {
-                Main.appendln(String.format("LVL: %d EXP NEEDED: %d/%d", p.getLevel(), p.expToNextLevel(),
+                Main.appendln(String.format("\t\tLVL: %d EXP NEEDED: %d/%d\n", p.getLevel(), p.expToNextLevel(),
                         p.expForLevel()));
             }
         }

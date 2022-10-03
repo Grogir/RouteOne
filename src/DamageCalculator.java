@@ -110,10 +110,10 @@ public class DamageCalculator {
         StatModifier mod1 = options.getMod1();
         StatModifier mod2 = options.getMod2();
 
-        sb.append(p1.levelName() + " vs " + p2.levelName() + "          >>> EXP GIVEN: " + p2.expGiven(1) + endl);
+        sb.append("\t" + p1.levelName() + " vs " + p2.levelName() + "          >>> EXP GIVEN: " + p2.expGiven(1) + endl);
         // sb.append(String.format("EXP to next level: %d EXP gained: %d",
         // p1.expToNextLevel(), p2.expGiven()) + endl);
-        sb.append(String.format("%s (%s) ", p1.pokeName(), p1.statsStr()));
+        sb.append(String.format("\t\t%s (%s) ", p1.pokeName(), p1.statsStr()));
         if (mod1.hasMods() || mod1.hasBBs()) {
             sb.append(String.format("%s -> (%s) ", mod1.summary(), mod1.modStatsStr(p1)) + endl);
         } else {
@@ -177,11 +177,11 @@ public class DamageCalculator {
         }
 
         if (mod2.hasMods()) {
-            sb.append(String.format("%s (%s) %s -> (%s): ", p2.pokeName(), p2.statsStr(), mod2.summary(),
+            sb.append(String.format("\t\t%s (%s) %s -> (%s): ", p2.pokeName(), p2.statsStr(), mod2.summary(),
                     mod2.modStatsStr(p2))
                     + endl);
         } else {
-            sb.append(String.format("%s (%s): ", p2.pokeName(), p2.statsStr()) + endl);
+            sb.append(String.format("\t\t%s (%s): ", p2.pokeName(), p2.statsStr()) + endl);
         }
         sb.append(summary_help(p2, p1, mod2, mod1));
 
@@ -264,7 +264,7 @@ public class DamageCalculator {
         int enemyHP = p2.getHP();
 
         for (Move m : p1.getMoveset()) {
-            sb.append(m.getName() + "\t");
+            sb.append("\t\t\t" + m.getName() + "\t");
             // calculate damage of this move, and its percentages on opposing
             // pokemon
             int minDmg = minDamage(m, p1, p2, mod1, mod2);
@@ -297,7 +297,7 @@ public class DamageCalculator {
             int oppHP = p2.getHP();
 
             // normal rolls
-            sb.append("\tNormal rolls: ");
+            sb.append("\t\t\t\tNormal rolls: ");
             int lastDam = -1;
             int lastDamCount = -1;
             for (int i = MIN_RANGE; i <= MAX_RANGE; i++) {
@@ -318,7 +318,7 @@ public class DamageCalculator {
             sb.append(lastDam + "x" + lastDamCount + endl);
 
             // crit rolls
-            sb.append("\tCrit rolls: ");
+            sb.append("\t\t\t\tCrit rolls: ");
             lastDam = -1;
             lastDamCount = -1;
             for (int i = MIN_RANGE; i <= MAX_RANGE; i++) {
@@ -358,7 +358,7 @@ public class DamageCalculator {
                                     * Math.pow(1 - critChance, hits - crits);
                         }
                         if (totalKillPct >= 0.1 && totalKillPct <= 99.999) {
-                            sb.append(String.format("\t(Overall %d-hit Kill%%: %.04f%%)", hits, totalKillPct) + endl);
+                            sb.append(String.format("\t\t\t\t(Overall %d-hit Kill%%: %.04f%%)", hits, totalKillPct) + endl);
                         }
                     }
                 }
@@ -367,12 +367,12 @@ public class DamageCalculator {
                 // test if noncrits can kill in 1shot
                 if (maxDmg >= oppHP && minDmg < oppHP) {
                     double oneShotPct = oneShotPercentage(m, p1, p2, mod1, mod2, false);
-                    sb.append(String.format("\t(One shot prob.: %.02f%%)", oneShotPct) + endl);
+                    sb.append(String.format("\t\t\t\t(One shot prob.: %.02f%%)", oneShotPct) + endl);
                 }
                 // test if crits can kill in 1shot
                 if (critMaxDmg >= oppHP && critMinDmg < oppHP) {
                     double oneShotPct = oneShotPercentage(m, p1, p2, mod1, mod2, true);
-                    sb.append(String.format("\t(Crit one shot prob.: %.02f%%)", oneShotPct) + endl);
+                    sb.append(String.format("\t\t\t\t(Crit one shot prob.: %.02f%%)", oneShotPct) + endl);
                 }
 
                 // n-shot
@@ -386,7 +386,7 @@ public class DamageCalculator {
                     if (maxDmgWork >= oppHP && minDmgWork < oppHP) {
                         System.out.println("working out a " + hits + "-shot");
                         double nShotPct = nShotPercentage(m, p1, p2, mod1, mod2, hits, 0);
-                        sb.append(String.format("\t(%d shot prob.: %.04f%%)", hits, nShotPct) + endl);
+                        sb.append(String.format("\t\t\t\t(%d shot prob.: %.04f%%)", hits, nShotPct) + endl);
                     }
                 }
 
@@ -401,7 +401,7 @@ public class DamageCalculator {
                     if (maxDmgWork >= oppHP && minDmgWork < oppHP) {
                         System.out.println("working out a " + hits + "-crit-shot");
                         double nShotPct = nShotPercentage(m, p1, p2, mod1, mod2, 0, hits);
-                        sb.append(String.format("\t(%d crits death prob.: %.04f%%)", hits, nShotPct) + endl);
+                        sb.append(String.format("\t\t\t\t(%d crits death prob.: %.04f%%)", hits, nShotPct) + endl);
                     }
                 }
 
@@ -413,7 +413,7 @@ public class DamageCalculator {
                         if (sumMin < oppHP && sumMax >= oppHP) {
                             System.out.printf("working out %d non-crits + %d crits\n", non, crit);
                             double nShotPct = nShotPercentage(m, p1, p2, mod1, mod2, non, crit);
-                            sb.append(String.format("\t(%d non-crit%s + %d crit%s death prob.: %.04f%%)", non,
+                            sb.append(String.format("\t\t\t\t(%d non-crit%s + %d crit%s death prob.: %.04f%%)", non,
                                     non > 1 ? "s" : "", crit, crit > 1 ? "s" : "", nShotPct)
                                     + endl);
                         }
@@ -424,7 +424,7 @@ public class DamageCalculator {
             // guaranteed n-shot
             if (Settings.showGuarantees) {
                 int guarantee = (int) Math.ceil(((double) oppHP) / realminDmg);
-                sb.append(String.format("\t(guaranteed %d-shot)", guarantee) + endl);
+                sb.append(String.format("\t\t\t\t(guaranteed %d-shot)", guarantee) + endl);
             }
 
         }
