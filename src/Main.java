@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.Locale;
 
 import org.ini4j.InvalidFileFormatException;
 import org.ini4j.Wini;
@@ -40,6 +41,11 @@ public class Main {
 
         Settings.showGuarantees = ini.get("util", "showguarantees", boolean.class);
         Settings.includeCrits = ini.get("util", "includecrits", boolean.class);
+        String defaultVerbose = ini.get("util", "defaultverbose", String.class);
+        if(defaultVerbose != null)
+            Settings.defaultVerbose = defaultVerbose;
+
+        Locale.setDefault(Locale.ENGLISH);
 
         Initialization.init();
 

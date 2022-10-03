@@ -5,7 +5,7 @@ public class BattleOptions {
     private boolean printSRsBoostOnLvl = false;
     private StatModifier mod1;
     private StatModifier mod2;
-    private int verbose = BattleOptions.NONE;
+    private int verbose;
     //verbose options
     public static final int NONE = 0;
     public static final int SOME = 1;
@@ -16,6 +16,7 @@ public class BattleOptions {
         setMod1(new StatModifier());
         setMod2(new StatModifier());
         splits = new int[] { 1, 1, 1, 1, 1, 1 };
+        setVerbose(Settings.defaultVerbose);
     }
 
     public boolean isPrintSRsBoostOnLvl() {
@@ -72,6 +73,20 @@ public class BattleOptions {
 
     public void setVerbose(int verbose) {
         this.verbose = verbose;
+    }
+
+    public void setVerbose(String verbose) {
+        if(verbose.matches("[0-9]+")) {
+            setVerbose(Integer.parseInt(verbose));
+        } else if(verbose.equalsIgnoreCase("NONE")) {
+            setVerbose(BattleOptions.NONE);
+        } else if(verbose.equalsIgnoreCase("SOME")) {
+            setVerbose(BattleOptions.SOME);
+        } else if(verbose.equalsIgnoreCase("ALL")) {
+            setVerbose(BattleOptions.ALL);
+        } else if(verbose.equalsIgnoreCase("EVERYTHING")) {
+            setVerbose(BattleOptions.EVERYTHING);
+        }
     }
     
 }

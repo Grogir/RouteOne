@@ -465,17 +465,7 @@ public class RouteParser {
             }
             //verbose
             else if(nf == NextFlag.VERBOSE){
-                if(s.matches("[0-9]+")) {
-                    options.setVerbose(Integer.parseInt(s));
-                } else if(s.equalsIgnoreCase("NONE")) {
-                    options.setVerbose(BattleOptions.NONE);
-                } else if(s.equalsIgnoreCase("SOME")) {
-                    options.setVerbose(BattleOptions.SOME);
-                } else if(s.equalsIgnoreCase("ALL")) {
-                    options.setVerbose(BattleOptions.ALL);
-                } else if(s.equalsIgnoreCase("EVERYTHING")) {
-                    options.setVerbose(BattleOptions.EVERYTHING);
-                }
+                options.setVerbose(s);
                 nf = NextFlag.ANY_FLAG;
                 continue;
             }

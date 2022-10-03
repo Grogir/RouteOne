@@ -4,4 +4,5 @@ public class Settings {
     public static String dataVersion = "blue";
     public static boolean showGuarantees = false;
     public static boolean includeCrits = false;
+    public static String defaultVerbose = "NONE";
 }
