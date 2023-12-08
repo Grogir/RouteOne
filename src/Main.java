@@ -70,7 +70,7 @@ public class Main {
         List<GameAction> actions = RouteParser.parseFile(ini.get("files","routeFile"));
 
         int[] XItems = {0,0,0,0,0}; //atk,def,spd,spc,acc
-        int numBattles = 0;
+        // int numBattles = 0;
         int rareCandies = 0;
         int HPUp = 0;
         int iron = 0;
@@ -87,7 +87,7 @@ public class Main {
                 XItems[2] += Math.max(0, sm.getSpdStage());
                 XItems[3] += Math.max(0, sm.getSpcStage());
                 XItems[4] += sm.getUsedXAcc() ? 1 : 0;
-                numBattles++;
+                // numBattles++;
             } else if (a == GameAction.eatRareCandy) {
                 rareCandies++;
             } else if (a == GameAction.eatHPUp){
