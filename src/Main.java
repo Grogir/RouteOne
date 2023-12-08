@@ -30,6 +30,7 @@ public class Main {
         int defIV = ini.get("poke", "defIV", int.class);
         int spdIV = ini.get("poke", "spdIV", int.class);
         int spcIV = ini.get("poke", "spcIV", int.class);
+        if(args.length > 1) atkIV = defIV = spdIV = spcIV = Integer.parseInt(args[1]);
         //set game
         String gameName = ini.get("game", "game");
         if(gameName.equalsIgnoreCase("yellow"))
@@ -151,7 +152,7 @@ public class Main {
         if(!(new File("outputs/")).exists()) {
             (new File("outputs/")).mkdir();
         }
-        FileWriter fw = new FileWriter("outputs/out_"+fh.getName());
+        FileWriter fw = new FileWriter("outputs/out_" + (args.length > 1 ? fh.getName().substring(0, fh.getName().length() - 2) + "_" + args[1] + ".c" : fh.getName()));
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(output.toString());
         bw.close();

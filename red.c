@@ -72,10 +72,10 @@ get HELIXFOSSIL
 get RARECANDY
 0x3A209 // Bridge Rival
 0x39DF2 // Bug Catcher
-// 0x39DF2 -bbs 1/0/0/0 // 1: Bug Catcher String Shot
+// 0x39DF2 -bbs 1/0/0/0 // Bug Catcher String Shot
 0x39E27 // Lass
 0x39DA5 // Youngster
-// 0x39DA5 -xdef -1 -bbs 1/0/0/0 // 3: Youngster Tail Whip
+// 0x39DA5 -xdef -1 -bbs 1/0/0/0 // Youngster Tail Whip
 0x39E23 // Lass
 0x39E80 // Mankey
 // 0x39E80 -xdef -1 -bbs 1/0/0/0 // Mankey Leered
@@ -160,14 +160,7 @@ um MEGAPUNCH
 use SUPERREPEL
 swap SSTICKET XACCURACY
 0x3A42B // Lavender Rival
-// L25 PIDGEOTTO -t
-// L23 GYARADOS -t
-// L22 GROWLITHE -t
-// L20 KADABRA -t
-// L25 IVYSAUR -t
 0x3A4E3 // Channeler 1
-// L23 GASTLY -t
-// L23 GASTLY -t
 get ELIXER
 get ELIXER
 // 0x3A4F0 // Haunter
@@ -188,10 +181,10 @@ use FRESHWATER
 get ELIXER
 0x3A319 // Arbok
 get CARDKEY
-// 0x3A44F -xacc // Silph Rival (before X Speed)
+// 0x3A44F -xacc // Silph Rival (after X Acc)
 // 0x3A44F -xacc -xspd 1 -bbs 1/1/0/0 // Silph Rival (after X Speed)
-0x3A44F -xacc -xspd 1 -xspc 1 -bbs 2/2/0/0 // Silph Rival (silph bar)
-// 0x3A44F -xacc -xspd 1 -xspc 2 -bbs 3/3/0/0 // Silph Rival (silph bar double X Spec)
+0x3A44F -xacc -xspd 1 -xspc 1 -bbs 2/2/0/0 // Silph Rival (after X Spec)
+// 0x3A44F -xacc -xspd 1 -xspc 2 -bbs 3/3/0/0 // Silph Rival (after second X Spec)
 use ELIXER
 0x3A355 -xacc // Rocket
 // L32 Cubone -t -sxp 2
@@ -244,7 +237,10 @@ get SECRETKEY
 0x3A3DB -xacc // Blaine
 
 // SABRINA
+// L38 Kadabra -t
+// L37 MrMime -t
 0x3A3E5 // Sabrina
+// stats
 
 // GIOVANNI
 0x3A382 // Rhyhorn
@@ -263,7 +259,6 @@ use ELIXER
 use SUPERREPEL
 0x3A475 -xacc -xspd 1 -bbs 1/1/0/1 // Viridian Rival
 // 0x3A475 -xacc -xspc 1 -bbs 1/1/1/0 // Viridian Rival beginners route
-// 0x3A475 -xacc -xspc 1 -bbs 1/1/1/0 // Viridian Rival square
 get MAXETHER
 use 3 SUPERREPEL
 use MAXETHER
@@ -292,8 +287,9 @@ use ELIXER
 
 // CHAMP
 lm Surf
-0x3A49F -xspc 1 -xacc -bbs 0/1/1/0 // Champ
+0x3A49F -xspc 1 -xacc -bbs 1/1/1/0 // Champ
 // 0x3A49F -xspc 1 -xacc // Champ after level up
 // 0x3A49F -xspd 1 -xacc -bbs 1/1/0/1 // Champ X Speed
 // 0x3A49F -xspc 3 -bbs 2/2/2/0 // meme
+
 

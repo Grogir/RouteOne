@@ -1,0 +1,16 @@
+RouteOne.jar squirtle.ini 0
+RouteOne.jar squirtle.ini 1
+RouteOne.jar squirtle.ini 2
+RouteOne.jar squirtle.ini 3
+RouteOne.jar squirtle.ini 4
+RouteOne.jar squirtle.ini 5
+RouteOne.jar squirtle.ini 6
+RouteOne.jar squirtle.ini 7
+RouteOne.jar squirtle.ini 8
+RouteOne.jar squirtle.ini 9
+RouteOne.jar squirtle.ini 10
+RouteOne.jar squirtle.ini 11
+RouteOne.jar squirtle.ini 12
+RouteOne.jar squirtle.ini 13
+RouteOne.jar squirtle.ini 14
+RouteOne.jar squirtle.ini 15
