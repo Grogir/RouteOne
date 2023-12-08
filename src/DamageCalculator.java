@@ -264,7 +264,7 @@ public class DamageCalculator {
         int enemyHP = p2.getHP();
 
         for (Move m : p1.getMoveset()) {
-            sb.append("\t\t\t" + m.getName() + "\t");
+            sb.append("\t\t\t" + m.getName() + " ");
             // calculate damage of this move, and its percentages on opposing
             // pokemon
             int minDmg = minDamage(m, p1, p2, mod1, mod2);
@@ -279,20 +279,25 @@ public class DamageCalculator {
                 sb.append(endl);
                 continue;
             }
-            double minPct = 100.0 * minDmg / enemyHP;
-            double maxPct = 100.0 * maxDmg / enemyHP;
+            // double minPct = 100.0 * minDmg / enemyHP;
+            // double maxPct = 100.0 * maxDmg / enemyHP;
             if (maxDmg != 0) {
-                sb.append(String.format("%d-%d %.02f-%.02f%%", minDmg, maxDmg, minPct, maxPct));
+                // sb.append(String.format("%d-%d %.02f-%.02f%%", minDmg, maxDmg, minPct, maxPct));
+                sb.append(String.format("%d-%d", minDmg, maxDmg));
             } else {
-                sb.append("low dmg miss");
+                // sb.append("low dmg miss");
+                sb.append("0");
             }
-            sb.append("\t(crit: ");
+            // sb.append("\t(crit: ");
+            sb.append(" [");
 
             // do it again, for crits
-            double critMinPct = 100.0 * critMinDmg / enemyHP;
-            double critMaxPct = 100.0 * critMaxDmg / enemyHP;
-            sb.append(String.format("%d-%d %.02f-%.02f", critMinDmg, critMaxDmg, critMinPct, critMaxPct));
-            sb.append("%)" + endl);
+            // double critMinPct = 100.0 * critMinDmg / enemyHP;
+            // double critMaxPct = 100.0 * critMaxDmg / enemyHP;
+            // sb.append(String.format("%d-%d %.02f-%.02f", critMinDmg, critMaxDmg, critMinPct, critMaxPct));
+            sb.append(String.format("%d-%d", critMinDmg, critMaxDmg));
+            // sb.append("%)" + endl);
+            sb.append("]" + endl);
 
             int oppHP = p2.getHP();
 
